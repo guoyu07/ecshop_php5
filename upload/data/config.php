@@ -9,12 +9,12 @@ $db_name   = "ecshop";
 $db_user   = "root";
 
 // database password
-$db_pass   = "";
+$db_pass   = "555aaa";
 
 // table prefix
 $prefix    = "ecs_";
 
-$timezone    = "UTC";
+$timezone    = "Asia/Chongqing";
 
 $cookie_path    = "/";
 
@@ -30,6 +30,6 @@ define('AUTH_KEY', 'this is a key');
 
 define('OLD_AUTH_KEY', '');
 
-define('API_TIME', '2015-02-28 09:55:06');
+define('API_TIME', '');
 
 ?>
