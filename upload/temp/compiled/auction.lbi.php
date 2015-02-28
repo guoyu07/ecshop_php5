@@ -1,21 +1,19 @@
-<?php if ($this->_var['auction_list']): ?>
+$this->select('if $auction_list');
 <div class="box">
  <div class="box_1">
-  <h3><span><?php echo $this->_var['lang']['auction_goods']; ?></span><a href="auction.php"><img src="themes/default/images/more.gif"></a></h3>
+  <h3><span>$this->select('$lang.auction_goods');</span><a href="auction.php"><img src="themes/default/images/more.gif"></a></h3>
     <div class="centerPadd">
     <div class="clearfix goodsBox" style="border:none;">
-      <?php $_from = $this->_var['auction_list']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('', 'auction');if (count($_from)):
-    foreach ($_from AS $this->_var['auction']):
-?>
+      $this->select('foreach from=$auction_list item=auction');
       <div class="goodsItem">
-           <a href="<?php echo $this->_var['auction']['url']; ?>"><img src="<?php echo $this->_var['auction']['thumb']; ?>" alt="<?php echo htmlspecialchars($this->_var['auction']['goods_name']); ?>" class="goodsimg" /></a><br />
-           <p><a href="<?php echo $this->_var['auction']['url']; ?>" title="<?php echo htmlspecialchars($this->_var['auction']['goods_name']); ?>"><?php echo htmlspecialchars($this->_var['auction']['short_style_name']); ?></a></p>
-           <font class="shop_s"><?php echo $this->_var['auction']['formated_start_price']; ?></font>
+           <a href="$this->select('$auction.url');"><img src="$this->select('$auction.thumb');" alt="$this->select('$auction.goods_name|escape:html');" class="goodsimg" /></a><br />
+           <p><a href="$this->select('$auction.url');" title="$this->select('$auction.goods_name|escape:html');">$this->select('$auction.short_style_name|escape:html');</a></p>
+           <font class="shop_s">$this->select('$auction.formated_start_price');</font>
         </div>
-      <?php endforeach; endif; unset($_from); ?><?php $this->pop_vars();; ?>
+      $this->select('/foreach');
     </div>
     </div>
  </div>
 </div>
 <div class="blank5"></div>
-<?php endif; ?>
+$this->select('/if');
