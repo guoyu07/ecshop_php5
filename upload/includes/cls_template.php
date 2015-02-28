@@ -297,7 +297,7 @@ class cls_template
                  $source= str_replace('%%%SMARTYSP'.$curr_sp.'%%%', '<?php echo \''.str_replace("'", "\'", $sp_match[1][$curr_sp]).'\'; ?>'."\n", $source);
             }
          }
-         return preg_replace("/{([^\}\{\n]*)}/e", "\$this->select('\\1');", $source);
+         return preg_replace("/{([^\}\{\n]*)}/", "\$this->select('\\1');", $source);
     }
 
     /**
@@ -550,7 +550,7 @@ class cls_template
     {
         if (strrpos($val, '[') !== false)
         {
-            $val = preg_replace("/\[([^\[\]]*)\]/eis", "'.'.str_replace('$','\$','\\1')", $val);
+            $val = preg_replace("/\[([^\[\]]*)\]/is", "'.'.str_replace('$','\$','\\1')", $val);
         }
 
         if (strrpos($val, '|') !== false)
